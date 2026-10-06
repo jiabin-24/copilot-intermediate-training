@@ -1,179 +1,179 @@
-# Demo Guide: Copilot Chat Coding Practices
+# 示範指南：Copilot Chat 編碼實務
 
-This guide provides a detailed walkthrough of how to utilize GitHub Copilot Chat to implement and validate a utility function within the PowerBI JavaScript repository. The focus is on efficiency, maintainability, and best practices.
-
----
-
-## Prerequisites
-
-1. **Repository Setup**:
-   - Clone the [PowerBI JavaScript Repository](https://github.com/microsoft/PowerBI-JavaScript).
-   - Install [Visual Studio Code](https://code.visualstudio.com/) with GitHub Copilot and Copilot Chat extensions.
-
-2. **Development Environment**:
-   - Ensure Node.js and npm are installed.
-   - Confirm Jest is configured for testing.
+本指南詳細介紹如何使用 GitHub Copilot Chat 在 PowerBI JavaScript 儲存庫中實作並驗證一個實用函式，重點關注效率、可維護性和最佳實務。
 
 ---
 
-## Task 1: Implement `calculatePercentage` Utility Function
+## 先決條件
 
-### Objective
-Create a reusable utility function that calculates percentages, handling edge cases such as division by zero.
+1. **設定儲存庫**：
+   - 複製 [PowerBI JavaScript 儲存庫](https://github.com/microsoft/PowerBI-JavaScript)。
+   - 安裝 [Visual Studio Code](https://code.visualstudio.com/)，並安裝 GitHub Copilot 和 Copilot Chat 擴充功能。
 
-### Steps
+2. **開發環境**：
+   - 確保已安裝 Node.js 和 npm。
+   - 確認已設定 Jest 以進行測試。
 
-1. **Identify the Utilities File**:
-   - Use `@workspace` to locate the correct file for utility functions:
+---
+
+## 任務 1：實作 `calculatePercentage` 實用函式
+
+### 目標
+建立一個可重複使用的百分比計算實用函式，並處理除數為零等邊界情況。
+
+### 步驟
+
+1. **確定實用工具檔案**：
+   - 使用 `@workspace` 找到放置實用函式的正確檔案：
      ```
-     @workspace, where should I place a new utility function for percentage calculations?
+     @workspace，我應該將新的百分比計算實用函式放在哪裡？
      ```
 
-2. **Create the Function**:
-   - Ask Copilot Chat to generate the function:
+2. **建立函式**：
+   - 要求 Copilot Chat 產生函式：
      ```
-     Can you write a utility function named calculatePercentage in JavaScript that takes two arguments, part and total, and calculates the percentage? Ensure the function handles cases where total is zero by returning 0.
-     ```
-
-3. **Handle Edge Cases**:
-   - Query Copilot Chat for additional edge cases:
-     ```
-     What are some additional test cases I should include for this utility function?
+     你能用 JavaScript 編寫一個名為 calculatePercentage 的實用函式嗎？該函式接收 part 和 total 兩個參數並計算百分比。當 total 為零時，函式應傳回 0。
      ```
 
-4. **Document the Function**:
-   - Add a description of the function and its parameters:
+3. **處理邊界情況**：
+   - 向 Copilot Chat 詢問其他邊界情況：
      ```
-     Refactor the following file to include a brief description of the function’s purpose and parameters.
+     我還應該為這個實用函式新增哪些測試案例？
+     ```
+
+4. **為函式撰寫文件**：
+   - 新增函式及其參數的說明：
+     ```
+     重構以下檔案，新增一段簡短說明，描述該函式的用途和參數。
      ```
 
 ---
 
-## Task 2: Generate Unit Tests
+## 任務 2：產生單元測試
 
-### Objective
-Write and execute unit tests using Jest to validate the functionality of `calculatePercentage`.
+### 目標
+使用 Jest 編寫並執行單元測試，以驗證 `calculatePercentage` 的功能。
 
-### Steps
+### 步驟
 
-1. **Set Up the Test Environment**:
-   - Run:
+1. **設定測試環境**：
+   - 執行：
      ```
      npm test
      ```
-   - If Jest is not installed, use:
+   - 如果尚未安裝 Jest，請執行：
      ```
      npm install jest
      ```
 
-2. **Create a Test File**:
-   - Locate the tests directory with `@workspace`:
+2. **建立測試檔案**：
+   - 使用 `@workspace` 找到測試目錄：
      ```
-     @workspace, where is the current test directory?
+     @workspace，目前的測試目錄在哪裡？
      ```
-   - Create `calculatePercentage.test.js` in the directory.
+   - 在該目錄中建立 `calculatePercentage.test.js`。
 
-3. **Write Unit Tests**:
-   - Ask Copilot Chat to generate test cases:
+3. **編寫單元測試**：
+   - 要求 Copilot Chat 產生測試案例：
      ```
-     Create unit tests for the calculatePercentage function that we have created.
+     為我們剛剛建立的 calculatePercentage 函式編寫單元測試。
      ```
 
-4. **Run the Tests**:
-   - Execute:
+4. **執行測試**：
+   - 執行：
      ```
      npm test calculatePercentage.test.js
      ```
 
-5. **Debug and Iterate**:
-   - Use Copilot Chat to troubleshoot any failing tests:
+5. **偵錯並反覆改進**：
+   - 使用 Copilot Chat 疑難排解任何失敗的測試：
      ```
-     Why is this test failing, and how can I fix it?
+     這個測試為什麼會失敗？我該如何修正它？
      ```
 
 ---
 
-## Task 3: Refactor and Add Comments
+## 任務 3：重構並新增註解
 
-### Objective
-Enhance code readability by adding robust comments and adhering to naming conventions.
+### 目標
+透過新增完善的註解並遵循命名慣例，提高程式碼可讀性。
 
-### Steps
+### 步驟
 
-1. **Locate Modified Files**:
-   - Use `@workspace` to find changed files:
+1. **找到已修改的檔案**：
+   - 使用 `@workspace` 尋找已變更的檔案：
      ```
-     @workspace, what files have I changed so far for this task?
-     ```
-
-2. **Add Comments**:
-   - Request Copilot Chat to add explanatory comments:
-     ```
-     Add robust comments for the following file that explains what each piece of code is doing.
+     @workspace，到目前為止，我為此任務修改了哪些檔案？
      ```
 
-3. **Refactor for Naming Conventions**:
-   - Update to camelCase or other conventions if needed.
+2. **新增註解**：
+   - 要求 Copilot Chat 新增解釋性註解：
+     ```
+     為以下檔案新增完善的註解，解釋每段程式碼的作用。
+     ```
+
+3. **根據命名慣例重構**：
+   - 根據需要更新為 camelCase 或其他命名慣例。
 
 ---
 
-## Task 4: Deployment and Consumption
+## 任務 4：部署和使用
 
-### Objective
-Demonstrate the functionality of `calculatePercentage` in a standalone JavaScript file.
+### 目標
+在一個獨立的 JavaScript 檔案中示範 `calculatePercentage` 的功能。
 
-### Steps
+### 步驟
 
-1. **Create a Consumer File**:
-   - Navigate to the root of the repository.
-   - Create `consumeCalculatePercentage.js`.
+1. **建立使用端檔案**：
+   - 前往儲存庫根目錄。
+   - 建立 `consumeCalculatePercentage.js`。
 
-2. **Import the Function**:
+2. **匯入函式**：
    ```javascript
    const { calculatePercentage } = require('./path/to/utilities');
    ```
 
-3. **Write Example Use Cases**:
+3. **編寫範例案例**：
    ```javascript
-   console.log('Example 1:', calculatePercentage(50, 100)); // Expected Output: 50
-   console.log('Example 2:', calculatePercentage(23, 0));  // Expected Output: 0
-   console.log('Example 3:', calculatePercentage(7, 20));  // Expected Output: 35
+   console.log('範例 1：', calculatePercentage(50, 100)); // 預期輸出：50
+   console.log('範例 2：', calculatePercentage(23, 0));  // 預期輸出：0
+   console.log('範例 3：', calculatePercentage(7, 20));  // 預期輸出：35
    ```
 
-4. **Run the File**:
+4. **執行檔案**：
    ```
    node consumeCalculatePercentage.js
    ```
 
-5. **Document the File**:
-   - Add a comment block explaining its purpose:
+5. **為檔案撰寫文件**：
+   - 新增一個解釋其用途的註解區塊：
      ```javascript
      /**
-      * This is a simple demo file to consume the calculatePercentage utility function.
-      * It demonstrates the functionality of the function with basic use cases.
+      * 這是一個使用 calculatePercentage 實用函式的簡單示範檔案。
+      * 它透過基本案例展示該函式的功能。
       */
      ```
 
-6. **Enhance the Demo**:
-   - Use Copilot Chat for suggestions and refactoring.
-   - Optionally, add error handling:
+6. **增強示範**：
+   - 使用 Copilot Chat 取得建議並進行重構。
+   - 也可以新增錯誤處理：
      ```javascript
      try {
-       console.log('Example 4:', calculatePercentage('invalid', 20));
+       console.log('範例 4：', calculatePercentage('invalid', 20));
      } catch (error) {
-       console.error('Error:', error.message);
+       console.error('錯誤：', error.message);
      }
      ```
 
 ---
 
-## Summary
+## 總結
 
-This demo showcased the power of GitHub Copilot Chat in implementing, testing, and documenting a reusable utility function. By following these steps, you’ll:
-- Develop clean, maintainable code.
-- Leverage AI to streamline development processes.
-- Ensure robust functionality through comprehensive testing and documentation.
+本示範展現了 GitHub Copilot Chat 在實作、測試和記錄可重複使用之實用函式方面的強大能力。按照這些步驟操作，你將能夠：
+- 開發整潔且易於維護的程式碼。
+- 利用 AI 簡化開發流程。
+- 透過全面的測試和文件確保功能可靠。
 
-### Resources
-- [PowerBI JavaScript Repository](https://github.com/microsoft/PowerBI-JavaScript)
-- [Jest Documentation](https://jestjs.io/docs/getting-started)
+### 資源
+- [PowerBI JavaScript 儲存庫](https://github.com/microsoft/PowerBI-JavaScript)
+- [Jest 文件](https://jestjs.io/docs/getting-started)
